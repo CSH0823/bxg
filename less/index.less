@@ -1,0 +1,110 @@
+// 变量表
+@import './variable.less';
+// 清除浏览器默认样式
+@import './reset.less';
+
+// 这一版我们用的是淘宝的flexible适配库
+// 使用方法：
+  //  如果是640px的设计图 那么我们去写元素的尺寸的时候 直接写 (元素的尺寸rem/64);
+  //  如果是750px的设计图 那么我们去写元素的尺寸的时候 直接写（元素的尺寸rem/75）；
+
+
+// 在rem布局中 一直以来有一个问题  字体的大小如果是12.3456767;
+// 争论: 12.3456767这个大小会造成 文字出现毛边 
+//  如果是ppi大于320的手机 是不会出现的
+//  如果ppi小于320的手机 有可能出现毛边
+
+
+// 这里写样式
+.kh-header {
+  width: 100%;
+  // height: (88/32)rem; 错误写法
+  // height: 2.75rem;
+  height: (88rem/64);
+  background-color: @headerBg;
+
+  i {
+    position: absolute;
+    top: (28rem/64);
+    left: (20rem/64);
+    width: (22rem/64);
+    height: (32rem/64);
+    background-image: url("../images/back.png");
+    background-size: (22rem/64) (32rem/64);
+  }
+
+  span {
+    font-size: (32rem/64);
+    line-height: (88rem/64);
+    margin-left: (56rem/64);
+    color: @white;
+  }
+}
+
+main {
+  width: 100%;
+  padding: 0 (24rem/64);
+  box-sizing: border-box;
+
+
+  .all-top {
+    height: (80rem/64);
+    width: 100%;
+    overflow: hidden;
+    h4 {
+      float: left;
+      font-size: (28rem/64);
+      color: @black;
+      line-height: (80rem/64);
+      font-weight: normal;
+
+    }
+
+    span {
+      float: right;
+      font-size: (28rem/64);
+      color: @allTopFontColor;
+      line-height: (80rem/64);
+    }
+  }
+
+  .all-bottom {
+    margin-top: (3rem/64);
+    width: 100%;
+    height: (224rem/64);
+    border: 3px dashed @allBottomBorderColor;
+    box-sizing: border-box;
+    text-align: center;
+
+    i {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: (36rem/64);
+      width: (104rem/64);
+      height: (104rem/64);
+      background-image: url("../images/add.png");
+      background-size: (104rem/64) (104rem/64);
+    }
+
+    span {
+      display: inline-block;
+      margin-top: (16rem/64);
+      font-size: (26rem/64);
+      color: @allBottomFontColor;
+    }
+  }
+
+  .tips {
+    margin-top: (122rem/64);
+    color: @allBottomFontColor;
+    p {
+      line-height: (40rem/64);
+      font-size: (24rem/64);
+    }
+  }
+}
+
+
+
+
